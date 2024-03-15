@@ -34,7 +34,7 @@ void strike_ball(int a, int b, int chances){
 
 void game(){
     int a = random(); //create random answer
-    int b = 0;
+    int b = -1;
     int chances = 5;
     while(a != b && chances > 0){
         std::cout << chances << " chances left." << std::endl;
