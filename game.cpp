@@ -1,10 +1,10 @@
 #include<iostream>
 #include<array>
 
-void print_status(int strike, int ball);
+void print_status(int strike, int ball, int chances);
 int random();
 
-void strike_ball(int a, int b){
+void strike_ball(int a, int b, int chances){
     int strike = 0, ball = 0;       //variable to save strikes and balls.
 
     std::array<int, 3> num_a;       //array to save answer and guess.
@@ -28,18 +28,20 @@ void strike_ball(int a, int b){
             }
         }
     }
-    print_status(strike, ball);
+    print_status(strike, ball, chances);
 
 }
 
 void game(){
     int a = random(); //create random answer
-    std::cout << "Answer is " << a/100 << (a%100)/10 << a%10 << std::endl;
     int b = 0;
-    while(a != b){
+    int chances = 5;
+    while(a != b && chances > 0){
+        std::cout << chances << " chances left." << std::endl;
         std::cout << "Enter a guess: ";
         std::cin >> b;
-        strike_ball(a, b);
+        strike_ball(a, b, chances);
+        chances -= 1;
     }
 }
 
