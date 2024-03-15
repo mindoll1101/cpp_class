@@ -6,7 +6,7 @@ void print_status(int strike, int ball, int chances){
     if(strike == 3){
         std::cout << "You win!" << std::endl;
     }
-    else if(chances == 1){
+    else if(chances < 2){
         std::cout << "You lose!" << std::endl;
     }
     else{
