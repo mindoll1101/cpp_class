@@ -1,6 +1,6 @@
 #include<iostream>
 
-void print_status(int strike, int ball, int chances){
+void print_status(int strike, int ball){
     if(strike == 3){
         std::cout << "You win!" << std::endl;
     }
